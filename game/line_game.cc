@@ -1,4 +1,4 @@
-#include "line_game.hh"
+#include "game/line_game.hh"
 
 namespace game {
 Step<LineState> step_game(const LineState &state, const LineAction &action) {
@@ -18,7 +18,9 @@ std::set<LineAction> available_actions(const LineState &state) {
 	return {{-1}, {1}};
 }
 
+int current_player(const LineState &state) { return 1; }
+
 game::GameOps<LineState, LineAction> get_line_game_ops() {
-	return game::GameOps<LineState, LineAction>{step_game, available_actions};
+	return game::GameOps<LineState, LineAction>{step_game, available_actions, current_player};
 }
 }  // namespace game

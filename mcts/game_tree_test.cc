@@ -2,8 +2,8 @@
 #include <iostream>
 #include <random>
 
-#include "game_tree.hh"
-#include "line_game.hh"
+#include "mcts/game_tree.hh"
+#include "game/line_game.hh"
 
 using GNode = mcts::Node<game::LineState, game::LineAction>;
 
@@ -37,7 +37,7 @@ int main() {
 	std::unique_ptr<GNode> root = make_game_tree();
 	const auto ops = game::get_line_game_ops();	
 
-	for (int i = 0; i < 200; i++) {
+	for (int i = 0; i < 10; i++) {
 		print_game_tree(root.get());
 		auto selected_node = select_node(root.get());
 		auto sim_node = expand_node(selected_node, ops);

@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-#include "game.hh"
+#include "game/game.hh"
 
 namespace mcts {
 template <class State, class Action>
