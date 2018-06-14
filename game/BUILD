@@ -13,3 +13,13 @@ cc_library(
 	],
 	visibility = ["//visibility:public",],
 )
+
+cc_library(
+	name = "tic_tac_toe",
+    hdrs = ["tic_tac_toe.hh",],
+	srcs = ["tic_tac_toe.cc",],
+	deps = [
+		":game",
+	],
+	visibility = ["//visibility:public",],
+)
